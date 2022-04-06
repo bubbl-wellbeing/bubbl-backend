@@ -41,6 +41,7 @@ const addList = async (req, res, next) => {
   try {
     const list = await new Journal({
       JournalText: req.body.JournalText,
+      Mood: req.body.Mood,
     });
     const saveList = await list.save();
     return res.status(201).json({
