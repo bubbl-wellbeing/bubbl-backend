@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "92e348dc-c70b-43d6-b73e-141dd787e5ff",
+		"name": "Journal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:4000/api/v1/list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/v1/list/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"list",
+						""
+					]
+				},
+				"description": "Fetch all journal"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/api/v1/list/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/v1/list/624df357845c55660150ea8a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"list",
+						"624df357845c55660150ea8a"
+					]
+				},
+				"description": "Fetch one journal"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/api/v1/list/new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"JournalText\": \"Hello World\",\r\n    \"Mood\": \"happy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/list/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"list",
+						"new"
+					]
+				},
+				"description": "Create new journal"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/api/v1/list/update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"6252cc45e516f56ea31e5439\",\r\n    \"JournalText\": \"Hello World Test 123 456 789\",\r\n    \"Mood\": \"Happy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/list/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"list",
+						"update"
+					]
+				},
+				"description": "Edit journal"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4000/api/v1/list/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"624df357845c55660150ea8a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/list/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"list",
+						"delete"
+					]
+				},
+				"description": "Delete journal"
+			},
+			"response": []
+		}
+	]
+}
