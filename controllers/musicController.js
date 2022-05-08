@@ -40,7 +40,7 @@ const setTrack = async (req, res) => {
   const storage = multer.memoryStorage();
   const upload = multer({
     storage: storage,
-    limits: { fields: 1, fileSize: 6000000, files: 1, parts: 2 },
+    limits: { fields: 2, fileSize: 30000000, files: 1, parts: 3 },
   });
   await upload.single("track")(req, res, (err) => {
     if (err) {
@@ -52,6 +52,7 @@ const setTrack = async (req, res) => {
     }
 
     let trackName = req.body.name;
+    let trackGenre = req.body.genre;
 
     const readableTrackStream = new Readable();
     readableTrackStream.push(req.file.buffer);
@@ -62,7 +63,7 @@ const setTrack = async (req, res) => {
       bucketName: "tracks",
     });
 
-    let uploadStream = bucket.openUploadStream(trackName);
+    let uploadStream = bucket.openUploadStream({ trackName, trackGenre });
     let id = uploadStream.id;
     readableTrackStream.pipe(uploadStream);
 
