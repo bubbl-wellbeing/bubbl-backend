@@ -37,10 +37,10 @@ app.use(xss());
 
 // Routers
 const list = require("./routers/journalRouter");
-app.use("/api/v1/list", list);
+app.use("/api/v2/list", list);
 
 const music = require("./routers/musicRouter");
-app.use("/api/v1/music", music);
+app.use("/api/v2/music", music);
 
 // Lister
 const PORT = process.env.PORT || 5000;
