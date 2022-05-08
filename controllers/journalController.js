@@ -3,7 +3,8 @@ const Journal = require("../models/journalModel");
 // Get list of all journal
 const getList = async (req, res, next) => {
   try {
-    const list = await Journal.find();
+    // const list = await Journal.find();
+    const list = await Journal.find({ username: req.params.username });
     return res.status(200).json({
       message: "Successful",
       data: list,
@@ -40,6 +41,7 @@ const getOne = async (req, res, next) => {
 const addList = async (req, res, next) => {
   try {
     const list = await new Journal({
+      username: req.body.username,
       JournalText: req.body.JournalText,
       Mood: req.body.Mood,
     });
